@@ -1,0 +1,4 @@
+{
+    "mongoURI": "db_URI",
+    "jwtSecret": "ck_secretkey"
+}

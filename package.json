@@ -1,0 +1,13 @@
+{
+    "name": "contact-keeper",
+    "version": "1.0.0",
+    "description": "Contact manager app - aymanehrouch version",
+    "main": "server.js",
+    "scripts": {
+        "test": "node server.js",
+        "server": "nodemon server.js"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC"
+}

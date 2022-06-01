@@ -10,14 +10,12 @@ const Navbar = ({ title, icon }) => {
             </h1>
             <ul>
                 <li>
-                    <Link to="/" />
-                    Home
+                    <Link to="/">Home</Link>
                 </li>
             </ul>
             <ul>
                 <li>
-                    <Link to="/about" />
-                    About
+                    <Link to="/about">About</Link>
                 </li>
             </ul>
         </div>

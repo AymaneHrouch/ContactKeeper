@@ -12,6 +12,7 @@ import ContactState from './context/contact/ContactState';
 import AuthState from './context/auth/AuthState';
 import AlertState from './context/alert/AlertState';
 import setAuthToken from './utils/setAuthToken';
+import PrivateRoute from './components/routing/PrivateRoute';
 
 if (localStorage.token) {
     setAuthToken(localStorage.token);
@@ -30,7 +31,15 @@ const App = props => {
                             <div className='container'>
                                 <Alert />
                                 <Routes>
-                                    <Route exact path='/' element={<Home />}></Route>
+                                    <Route
+                                        exact
+                                        path='/'
+                                        element={
+                                            <PrivateRoute>
+                                                <Home />
+                                            </PrivateRoute>
+                                        }
+                                    ></Route>
                                     <Route
                                         exact
                                         path='/about'

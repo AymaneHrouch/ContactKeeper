@@ -24,9 +24,9 @@ const Contacts = () => {
 
     return (
         <Fragment>
-            {contacts !== null && !loading ? (
+            {visible_contacts !== null && !loading ? (
                 <TransitionGroup>
-                    {visible_contacts.sort(compareFn).map(contact => (
+                    {visible_contacts.map(contact => (
                         <CSSTransition key={contact._id} timeout={500} classNames='item'>
                             <ContactItem contact={contact} />
                         </CSSTransition>

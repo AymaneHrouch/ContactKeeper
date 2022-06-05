@@ -1,5 +1,5 @@
 const express = require('express');
-const { path } = require('express/lib/application');
+const path = require('path');
 const { sendFile } = require('express/lib/response');
 const app = express();
 const connectDB = require('./config/db');

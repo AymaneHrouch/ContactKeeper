@@ -68,9 +68,9 @@ const AuthState = props => {
         };
 
         try {
+            loadUser();
             const res = await axios.post('/api/auth', formData, config);
             dispatch({ type: LOGIN_SUCCESS, payload: res.data });
-            loadUser();
         } catch (err) {
             dispatch({
                 type: LOGIN_FAIL,
@@ -80,7 +80,7 @@ const AuthState = props => {
     };
 
     // Logout
-    const logout = () => {};
+    const logout = () => dispatch({type: LOGOUT});
 
     // Clear Errors
     const clearErrors = () => dispatch({ type: CLEAR_ERRORS });

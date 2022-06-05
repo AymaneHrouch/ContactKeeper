@@ -11,8 +11,12 @@ import './App.css';
 import ContactState from './context/contact/ContactState';
 import AuthState from './context/auth/AuthState';
 import AlertState from './context/alert/AlertState';
+import setAuthToken from './utils/setAuthToken';
 
-const App = () => {
+if (localStorage.token) {
+    setAuthToken(localStorage.token);
+}
+const App = props => {
     return (
         <AuthState>
             <ContactState>
@@ -32,7 +36,7 @@ const App = () => {
                                     <Route
                                         exact
                                         path='/register'
-                                        element={<Register />}
+                                        element={<Register {...props} />}
                                     ></Route>
                                     <Route
                                         exact

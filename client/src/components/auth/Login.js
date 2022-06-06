@@ -16,7 +16,7 @@ const Login = () => {
             navigate('/');
         }
 
-        if (error === 'User already exists') {
+        if (error === 'Invalid Credentials') {
             setAlert(error, 'danger');
             clearErrors();
         }

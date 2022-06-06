@@ -11,7 +11,7 @@ const Contacts = () => {
     useEffect(() => {
         contactContext.getContacts();
         // eslint-disable-next-line
-    }, [contacts]);
+    });
 
     if (contacts !== null && contacts.length === 0 && !loading) {
         return <h4>Please add a contact</h4>;

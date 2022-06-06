@@ -33,7 +33,6 @@ const AuthState = props => {
 
         try {
             const res = await axios.get('/api/auth');
-
             dispatch({ type: USER_LOADED, payload: res.data });
         } catch (err) {
             dispatch({ type: AUTH_ERROR });
@@ -58,7 +57,7 @@ const AuthState = props => {
             });
         }
     };
-    
+
     // Login User
     const login = async formData => {
         const config = {
@@ -80,7 +79,7 @@ const AuthState = props => {
     };
 
     // Logout
-    const logout = () => dispatch({type: LOGOUT});
+    const logout = () => dispatch({ type: LOGOUT });
 
     // Clear Errors
     const clearErrors = () => dispatch({ type: CLEAR_ERRORS });

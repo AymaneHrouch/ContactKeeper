@@ -7,12 +7,12 @@ const Login = () => {
     const navigate = useNavigate();
     const alertContext = useContext(AlertContext);
     const authContext = useContext(AuthContext);
-    
+
     const { setAlert } = alertContext;
     const { login, error, clearErrors, isAuthenticated } = authContext;
-    
+
     useEffect(() => {
-        if(isAuthenticated) {
+        if (isAuthenticated) {
             navigate('/');
         }
 
@@ -20,6 +20,8 @@ const Login = () => {
             setAlert(error, 'danger');
             clearErrors();
         }
+
+        // eslint-disable-next-line
     }, [error, isAuthenticated]);
 
     const [user, setUser] = useState({

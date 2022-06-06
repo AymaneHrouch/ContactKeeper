@@ -10,7 +10,8 @@ const Contacts = () => {
 
     useEffect(() => {
         contactContext.getContacts();
-    }, []);
+        // eslint-disable-next-line
+    }, [contacts]);
 
     if (contacts !== null && contacts.length === 0 && !loading) {
         return <h4>Please add a contact</h4>;
@@ -20,13 +21,15 @@ const Contacts = () => {
         return a.name.toLowerCase().localeCompare(b.name.toLowerCase());
     };
 
+    console.log('filtered', filtered);
+    console.log('contacts', contacts);
     let visible_contacts = filtered ? filtered : contacts;
 
     return (
         <Fragment>
             {visible_contacts !== null && !loading ? (
                 <TransitionGroup>
-                    {visible_contacts.map(contact => (
+                    {visible_contacts.sort(compareFn).map(contact => (
                         <CSSTransition key={contact._id} timeout={500} classNames='item'>
                             <ContactItem contact={contact} />
                         </CSSTransition>
